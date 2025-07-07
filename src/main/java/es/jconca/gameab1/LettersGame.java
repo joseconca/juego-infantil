@@ -21,6 +21,7 @@ public class LettersGame {
     private Label letterLabel;
     private Button nextButton, shuffleButton, backButton;
     private ProgressBar progressBar;
+    private StackPane card;
     private int index = -1;
     private String[] letters = {
             "A","B","C","D","E","F","G","H","I","J","K","L","M",
@@ -35,10 +36,9 @@ public class LettersGame {
         letterLabel.setFont(new Font(240));
         letterLabel.setTextFill(Color.BLACK);
 
-        StackPane card = new StackPane(letterLabel);
+        card = new StackPane(letterLabel);
         card.setStyle("-fx-background-color: yellow; -fx-background-radius: 20px;"
                 + "-fx-border-color: black; -fx-border-width: 3px; -fx-border-radius: 20px;");
-        // Tamaño al 60%
         card.prefWidthProperty().bind(stage.widthProperty().multiply(0.6));
         card.maxWidthProperty().bind(stage.widthProperty().multiply(0.6));
         card.prefHeightProperty().bind(stage.heightProperty().multiply(0.6));
@@ -77,7 +77,7 @@ public class LettersGame {
 
         scene = new Scene(layout, 800, 600);
 
-        // --- Teclas: Espacio y Esc ---
+        // --- Teclas ---
         scene.setOnKeyPressed(evt -> {
             if (evt.getCode() == KeyCode.SPACE) {
                 advance(card);
@@ -86,7 +86,6 @@ public class LettersGame {
             }
         });
 
-        // Primera letra
         advance(card);
     }
 
@@ -112,5 +111,16 @@ public class LettersGame {
         List<String> list = Arrays.asList(letters);
         Collections.shuffle(list);
         letters = list.toArray(new String[0]);
+    }
+
+    private void sort() {
+        List<String> list = Arrays.asList(letters);
+        Collections.sort(list);
+        letters = list.toArray(new String[0]);
+    }
+    public void reset() {
+        index = -1;
+        sort();
+        advance(card);
     }
 }

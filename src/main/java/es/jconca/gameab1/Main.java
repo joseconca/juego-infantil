@@ -32,7 +32,10 @@ public class Main extends Application {
         NumbersGame numbersGame = new NumbersGame(primaryStage, menuScene);
 
         // Acción al hacer clic en cada botón del menú
-        btnLetras.setOnAction(e -> primaryStage.setScene(lettersGame.getScene()));
+        btnLetras.setOnAction(e ->{
+            lettersGame.reset();
+            primaryStage.setScene(lettersGame.getScene());
+            });
         btnNumeros.setOnAction(e -> primaryStage.setScene(numbersGame.getScene()));
 
         // Configurar la ventana principal
