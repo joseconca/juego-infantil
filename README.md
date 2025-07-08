@@ -32,7 +32,13 @@ Este proyecto es una aplicación de escritorio desarrollada en **JavaFX** que ay
 * **IntelliJ IDEA** 🤖: IDE para desarrollo y ejecución.
 
 ---
+## Capturas
+![imagen](https://github.com/user-attachments/assets/4b790ff6-1c74-4147-966c-da36e6b8dec9)
+![imagen](https://github.com/user-attachments/assets/2e347dbe-3086-4b5d-a4a1-586b7d47b225)
+![imagen](https://github.com/user-attachments/assets/445d4dbe-229a-48c2-a750-901a1135c029)
 
+
+---
 ## 🚀 Posibles caminos de mejora futura
 
 * 🔊 **Agregar efectos de sonido**: clips al pasar de tarjeta y voz que pronuncie la letra/número.
