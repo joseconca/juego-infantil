@@ -23,10 +23,12 @@ public class LettersGame {
     private ProgressBar progressBar;
     private StackPane card;
     private int index = -1;
-    private String[] letters = {
+
+    private String[] orderedLetters = {
             "A","B","C","D","E","F","G","H","I","J","K","L","M",
             "N","Ñ","O","P","Q","R","S","T","U","V","W","X","Y","Z"
     };
+    private String[] letters = orderedLetters.clone();
 
     public LettersGame(Stage stage, Scene menuScene) {
         this.stage = stage;
@@ -114,9 +116,7 @@ public class LettersGame {
     }
 
     private void sort() {
-        List<String> list = Arrays.asList(letters);
-        Collections.sort(list);
-        letters = list.toArray(new String[0]);
+        letters = orderedLetters.clone();
     }
     public void reset() {
         index = -1;
